@@ -1,38 +1,54 @@
-from __future__ import division
-import os
 import numpy as np
 import pandas as pd
-from collections import OrderedDict
-from bokeh.sampledata import us_states
-from bokeh.plotting import figure, show, output_file,ColumnDataSource
-from bokeh.models import HoverTool
+from bokeh.browserlib import view
+from bokeh.document import Document
+from bokeh.embed import file_html
+from bokeh.models.glyphs import Circle
+from bokeh.plotting import figure, show, output_file
+from bokeh.models import (
+    GMapPlot, Range1d, ColumnDataSource, LinearAxis,
+    PanTool, WheelZoomTool, BoxSelectTool,
+    BoxSelectionOverlay, GMapOptions,
+    NumeralTickFormatter, PrintfTickFormatter,HoverTool, TapTool, OpenURL,)
+from bokeh.resources import INLINE
 
-us_states = us_states.data.copy()
-del us_states["HI"]
-del us_states["AK"]
+x_range = Range1d()
+y_range = Range1d()
 
-state_xs = [us_states[code]["lons"] for code in us_states]
-state_ys = [us_states[code]["lats"] for code in us_states]
+# JSON style string taken from: https://snazzymaps.com/style/1/pale-dawn
+map_options = GMapOptions(lat=39, lng=-98, map_type="roadmap", zoom=5, styles="""
+[{"featureType":"administrative","elementType":"all","stylers":[{"visibility":"on"},{"lightness":33}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2e5d4"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#c5dac6"}]},{"featureType":"poi.park","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":20}]},{"featureType":"road","elementType":"all","stylers":[{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"color":"#c5c6c6"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#e4d7c6"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#fbfaf7"}]},{"featureType":"water","elementType":"all","stylers":[{"visibility":"on"},{"color":"#acbcc9"}]}]
+""")
+
+plot = GMapPlot(
+    x_range=x_range, y_range=y_range,
+    map_options=map_options,
+    title = "LODD Map",plot_width=1400, plot_height=1000
+)
 
 data = pd.read_csv('study_data.csv')
 
+source = ColumnDataSource({'lat':data['Latitude'],'lon':data['Longitude'],'studys': data['Study'],'report': data['Report']})
+circle = Circle(x="lon",y="lat",size=15, fill_color="navy")
+plot.add_glyph(source, circle)
 
-output_file("lodd_map.html", title="LODD Map")
-TOOLS="pan,box_zoom,wheel_zoom,reset,resize,save,hover"
-p = figure(title="NIST LODD/LODI Studies", toolbar_location="left",
-    plot_width=1100, plot_height=700,tools=TOOLS)
+pan = PanTool()
+wheel_zoom = WheelZoomTool()
+hover = HoverTool.tooltips = [('Study Title','@studys')]
+url = "http://dx.doi.org/10.6028/@report"
+tap = TapTool.callback = OpenURL(url=url)
 
-p.patches(state_xs, state_ys, fill_alpha=0.0,
-    line_color="#884444", line_width=2)
+plot.add_tools(pan,wheel_zoom)
+# plot.add_models(hover,tap)
 
-for i in range(0,len(data)):
-    study_label = data['Study'][i]
-    source = ColumnDataSource({'studys': study_label})
-    x = data['Longitude'][i]
-    y = data['Latitude'][i]
 
-p.circle(x,y,source=source,size=10, color="navy", alpha=0.5)
-hover = p.select(dict(type=HoverTool))
-hover.tooltips = [('Study Title','@studys')]
+doc = Document()
+doc.add(plot)
 
-show(p)
+if __name__ == "__main__":
+    filename = "maps.html"
+    with open(filename, "w") as f:
+        f.write(file_html(doc, INLINE, "NIST LODD Map"))
+    print("Wrote %s" % filename)
+    view(filename)
+
