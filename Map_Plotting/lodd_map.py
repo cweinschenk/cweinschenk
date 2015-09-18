@@ -23,7 +23,7 @@ map_options = GMapOptions(lat=39, lng=-98, map_type="roadmap", zoom=5, styles=""
 plot = GMapPlot(
     x_range=x_range, y_range=y_range,
     map_options=map_options,
-    title = "LODD Map",plot_width=1400, plot_height=1000
+    title = "NIST LODD Study Map",plot_width=1400, plot_height=1000
 )
 
 data = pd.read_csv('study_data.csv')
@@ -34,13 +34,13 @@ plot.add_glyph(source, circle)
 
 pan = PanTool()
 wheel_zoom = WheelZoomTool()
-hover = HoverTool.tooltips = [('Study Title','@studys')]
+hover = HoverTool()
+tap = TapTool()
+HoverTool.tooltips = [('Study Title','@studys')]
 url = "http://dx.doi.org/10.6028/@report"
-tap = TapTool.callback = OpenURL(url=url)
+TapTool.callback = OpenURL(url=url)
 
-plot.add_tools(pan,wheel_zoom)
-# plot.add_models(hover,tap)
-
+plot.add_tools(pan,wheel_zoom,hover,tap)
 
 doc = Document()
 doc.add(plot)
@@ -48,7 +48,7 @@ doc.add(plot)
 if __name__ == "__main__":
     filename = "maps.html"
     with open(filename, "w") as f:
-        f.write(file_html(doc, INLINE, "NIST LODD Map"))
+        f.write(file_html(doc, INLINE, "NIST LODD Study Map"))
     print("Wrote %s" % filename)
     view(filename)
 
