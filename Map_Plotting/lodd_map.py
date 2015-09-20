@@ -23,7 +23,7 @@ map_options = GMapOptions(lat=39, lng=-98, map_type="roadmap", zoom=4, styles=""
 plot = GMapPlot(
     x_range=x_range, y_range=y_range,
     map_options=map_options,
-    title = "NIST LODD/LODI Study Map",plot_width=1100, plot_height=700
+    title = "NIST Fire Studies Map",plot_width=1100, plot_height=700
 )
 
 data = pd.read_csv('study_data.csv')
