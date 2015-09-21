@@ -1,4 +1,6 @@
 import geopy
+import numpy as np
+import pandas as pd
 from bokeh.browserlib import view
 from bokeh.document import Document
 from bokeh.embed import file_html
@@ -10,18 +12,18 @@ from bokeh.models import (
     NumeralTickFormatter, PrintfTickFormatter)
 from bokeh.resources import INLINE
 
-ADDRESS = "12300 Bissonnet Rd, Houston, TX"
+ADDRESS = "1959 Southern Boulevard , New York NY"
 
 lat = []
 lon = []
 
 geocoders = [
-    geopy.geocoders.Nominatim(timeout=5),
+    # geopy.geocoders.Nominatim(timeout=5),
     geopy.geocoders.ArcGIS(timeout=5),
     geopy.geocoders.GoogleV3(timeout=5),
-    geopy.geocoders.Yandex(timeout=5),
-    geopy.geocoders.OpenMapQuest(timeout=5),
-    geopy.geocoders.GeocoderDotUS(timeout=5),
+    # geopy.geocoders.Yandex(timeout=5),
+    # geopy.geocoders.OpenMapQuest(timeout=5),
+    # geopy.geocoders.GeocoderDotUS(timeout=5),
     # geopy.geocoders.Baidu(),
     # geopy.geocoders.Bing(),
     # geopy.geocoders.YahooPlaceFinder(),
@@ -37,7 +39,7 @@ geocoders = [
 
 for service in geocoders:
     location = service.geocode(ADDRESS)
-    print service, location.latitude, location.longitude
+    print (service, location.latitude, location.longitude)
     lat.append(location.latitude)
     lon.append(location.longitude)
 
@@ -111,5 +113,5 @@ if __name__ == "__main__":
     filename = "maps.html"
     with open(filename, "w") as f:
         f.write(file_html(doc, INLINE, "Google Maps Example"))
-    print "Wrote %s" % filename
+    print ("Wrote %s" % filename)
     view(filename)

@@ -23,13 +23,13 @@ map_options = GMapOptions(lat=39, lng=-98, map_type="roadmap", zoom=4, styles=""
 plot = GMapPlot(
     x_range=x_range, y_range=y_range,
     map_options=map_options,
-    title = "NIST Fire Studies Map",plot_width=1100, plot_height=700
+    title = "NIST Fire Studies",plot_width=1100, plot_height=700
 )
 
 data = pd.read_csv('study_data.csv')
 
-source = ColumnDataSource({'lat':data['Latitude'],'lon':data['Longitude'],'studys': data['Study'],'report': data['Report']})
-circle = Circle(x="lon",y="lat",size=15, fill_color="navy")
+source = ColumnDataSource({'lat':data['Latitude'],'lon':data['Longitude'],'studys': data['Study'],'report': data['Report'],'fill':data['Color']})
+circle = Circle(x="lon",y="lat",size=15,fill_color="fill")
 plot.add_glyph(source, circle)
 
 pan = PanTool()
@@ -46,9 +46,9 @@ doc = Document()
 doc.add(plot)
 
 if __name__ == "__main__":
-    filename = "NIST_LODD_LODI_Map.html"
+    filename = "NIST_Fire_Studies.html"
     with open(filename, "w") as f:
-        f.write(file_html(doc, INLINE, "NIST LODD/LODI Study Map"))
+        f.write(file_html(doc, INLINE, "NIST Fire Study Map"))
     print("Wrote %s" % filename)
     view(filename)
 
