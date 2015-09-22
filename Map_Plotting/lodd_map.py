@@ -28,7 +28,7 @@ plot = GMapPlot(
 
 data = pd.read_csv('study_data.csv')
 
-source = ColumnDataSource({'lat':data['Latitude'],'lon':data['Longitude'],'studys': data['Study'],'report': data['Report'],'fill':data['Color']})
+source = ColumnDataSource({'lat':data['Latitude'],'lon':data['Longitude'],'studys': data['Study'],'report': data['Report'],'fill':data['Color'],'type':data['Type'],'date':data['Date']})
 circle = Circle(x="lon",y="lat",size=15,fill_color="fill")
 plot.add_glyph(source, circle)
 
@@ -36,7 +36,7 @@ pan = PanTool()
 wheel_zoom = WheelZoomTool()
 hover = HoverTool()
 tap = TapTool()
-hover.tooltips = [('Study Title','@studys')]
+hover.tooltips = [('Study Title','@studys'),('Date','@date'),('Type','@type')]
 url = "@report"
 TapTool.callback = OpenURL(url=url)
 
