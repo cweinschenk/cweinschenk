@@ -1,14 +1,15 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 import numpy as np
 import pandas as pd
-from bokeh.browserlib import view
+from bokeh.util.browser import view
 from bokeh.document import Document
 from bokeh.embed import file_html
 from bokeh.models.glyphs import Circle
 from bokeh.plotting import figure, show, output_file
 from bokeh.models import (
     GMapPlot, Range1d, ColumnDataSource, LinearAxis,
-    PanTool, WheelZoomTool, BoxSelectTool,
-    BoxSelectionOverlay, GMapOptions,
+    PanTool, WheelZoomTool, BoxSelectTool, GMapOptions,
     NumeralTickFormatter, PrintfTickFormatter,HoverTool, TapTool, OpenURL,)
 from bokeh.resources import INLINE
 

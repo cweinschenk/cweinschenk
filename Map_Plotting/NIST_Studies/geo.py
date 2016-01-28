@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 import geopy
 import numpy as np
 import pandas as pd
@@ -12,7 +14,7 @@ from bokeh.models import (
     NumeralTickFormatter, PrintfTickFormatter)
 from bokeh.resources import INLINE
 
-ADDRESS = "1959 Southern Boulevard , New York NY"
+ADDRESS = "Colorado Springs, Colorado "
 
 lat = []
 lon = []
