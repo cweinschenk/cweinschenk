@@ -1,2 +1,2 @@
 # cweinschenk
-Projects that explore my interests in programming/data analysis with practicality.
+Coding projects mostly focused around python and data visualization
