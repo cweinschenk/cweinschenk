@@ -11,7 +11,7 @@ from bokeh.tile_providers import STAMEN_TONER
 from bokeh.plotting import show,Figure
 from bokeh.models import Range1d, ColumnDataSource, LinearAxis, PanTool, WheelZoomTool,HoverTool,VBox,HBox,Select
 
-TOOLS="pan,box_zoom,wheel_zoom,reset,save,hover"
+TOOLS="pan,wheel_zoom,reset,save,hover"
 
 document = Document()
 session = push_session(document)
@@ -54,10 +54,11 @@ def map():
     plot.axis.visible = False
     plot.xgrid.grid_line_color = None
     plot.ygrid.grid_line_color = None
-    plot.scatter(x="lat", y="lon",source=source_map,size="size",color='red', marker='o') 
+    plot.scatter(x="lat_b", y="lon_b",source=source_map,size="size",color='red', marker='o') 
+    plot.scatter(x="lat_p", y="lon_p",source=source_map,size="size",color='blue', marker='square') 
 
-    # hover = plot.select(dict(type=HoverTool))
-    # hover.tooltips = [('Plant Name','@Name'),('Reactor and Containment','@Type')]
+    hover = plot.select(dict(type=HoverTool))
+    hover.tooltips = [('Plant Name','@name'),('Reactor and Containment','@type')]
 
     return plot
 
@@ -77,12 +78,19 @@ def update_map():
         df['normalized_size'] = 15*(df['Operating License Expires Days']/df['Operating License Expires Days'].max())    
     elif size == 'Power Output':
         df['normalized_size'] = 15*(df['Licensed MWt']/df['Licensed MWt'].max())
-    # map = df[df.size == 'normalized_size']
+
+    #split data based on reactor type
+    data_bwr = df[df['Reactor and Containment Type'].str.contains('BWR')]
+    data_pwr = df[df['Reactor and Containment Type'].str.contains('PWR')]
 
     source_map.data = dict(
-        lat=df['merc_lat'],
-        lon=df['merc_lon'],
+        lat_b=data_bwr['merc_lat'],
+        lon_b=data_bwr['merc_lon'],
+        lat_p=data_pwr['merc_lat'],
+        lon_p=data_pwr['merc_lon'],
         size=df['normalized_size'],
+        name=df['Plant Name Unit Number'],
+        type=df['Reactor and Containment Type']
     )
 
 def update_data():
