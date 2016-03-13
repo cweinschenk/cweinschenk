@@ -72,6 +72,10 @@ def performance():
                   plot_width=1000,plot_height=300)
     plot.line(x="time",y="power_out",source=source_perfomance,line_color="green")
     plot.x_range = DataRange1d(range_padding=0.0, bounds=None)
+    
+    hover = plot.select(dict(type=HoverTool))
+    hover.tooltips = [('Date','@hover_time'),('Performance','@power_out')]
+
     return plot
 
 def update_map():
@@ -106,7 +110,7 @@ def update_map():
 
 def update_performance():
     npp_loc = df_perform[location]
-    source_perfomance.data = dict(time=df_perform.index.to_datetime(), power_out=npp_loc)
+    source_perfomance.data = dict(time=df_perform.index.to_datetime(),power_out=npp_loc,hover_time=df_perform.index)
 
 def update_data():
     update_map()
