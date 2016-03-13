@@ -8,8 +8,9 @@ from bokeh.io import curdoc
 from bokeh.models import WMTSTileSource,ImageSource
 from bokeh.document import Document
 from bokeh.tile_providers import STAMEN_TONER
-from bokeh.plotting import show,Figure
-from bokeh.models import Range1d, ColumnDataSource, LinearAxis, PanTool, WheelZoomTool,HoverTool,VBox,HBox,Select
+from bokeh.plotting import show,Figure,figure
+from bokeh.models.glyphs import Line
+from bokeh.models import Range1d, ColumnDataSource, LinearAxis, PanTool, WheelZoomTool,HoverTool,VBox,HBox,Select,DataRange1d
 
 TOOLS="pan,wheel_zoom,reset,save,hover"
 
@@ -29,7 +30,6 @@ def geographic_to_web_mercator(x_lon, y_lat):
 
 
 size = 'Days Active'
-size_select = Select(value=size, title='NPP Scaling', options=['Days Active', 'Days Remaining', 'Power Output'])
 #read in data
 df_geo = pd.read_csv('NPP_Locations.csv')
 df_npp = pd.read_csv('NUREG_1350_Volume_27_Appendix_A.csv')
@@ -43,12 +43,11 @@ df['merc_lon'] = y2
 
 source_map = ColumnDataSource(data=dict())
 
-
 def map():
-    x_range=(-15000000,-6000000)
-    y_range=(3000000,6000000)
+    x_range=(-10000000,-11000000)
+    y_range=(3500000,5200000)
 
-    plot=Figure(tools=TOOLS, title = 'Power Plant Interaction',plot_width=1000,plot_height=700,
+    plot=Figure(tools=TOOLS, title = 'Power Plant Locations',plot_width=1000,plot_height=500,
     x_range=x_range,y_range=y_range)
     plot.add_tile(STAMEN_TONER)
     plot.axis.visible = False
@@ -62,6 +61,18 @@ def map():
 
     return plot
 
+df_perform = pd.read_csv('npp_performance.csv', index_col='Date')
+locations = list(df_perform.columns.values)
+location = 'Arkansas Nuclear 1'
+
+source_perfomance = ColumnDataSource(data=dict())
+
+def performance():
+    plot = Figure(x_axis_type="datetime",tools="pan,hover", toolbar_location=None,title = 'Power Plant Performance',
+                  plot_width=1000,plot_height=300)
+    plot.line(x="time",y="power_out",source=source_perfomance,line_color="green")
+    plot.x_range = DataRange1d(range_padding=0.0, bounds=None)
+    return plot
 
 def update_map():
     if size == 'Days Active':
@@ -93,20 +104,33 @@ def update_map():
         type=df['Reactor and Containment Type']
     )
 
+def update_performance():
+    npp_loc = df_perform[location]
+    source_perfomance.data = dict(time=df_perform.index.to_datetime(), power_out=npp_loc)
+
 def update_data():
     update_map()
+    update_performance()
 
 def on_size_change(attr, old, new):
     global size
     size=new
     update_data()
 
+def on_location_change(attr, old, new):
+    global location
+    location = new
+    update_data()
+
 def create_layout():
     size_select = Select(value='Days Active', title='NPP Scaling', options=['Days Active', 'Days Remaining', 'Power Output'])
     size_select.on_change('value',on_size_change)
     
-    controls = HBox(children=[size_select])
-    layout = VBox(children=[controls, map()])
+    location_select = Select(title="Power Plant", value="Arkansas Nuclear 1", options=locations)
+    location_select.on_change('value', on_location_change)
+
+    controls = HBox(children=[size_select,location_select])
+    layout = VBox(children=[controls, map(),performance()])
 
     return layout
 
