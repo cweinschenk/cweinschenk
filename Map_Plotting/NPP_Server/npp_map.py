@@ -54,14 +54,14 @@ def map():
     plot.xgrid.grid_line_color = None
     plot.ygrid.grid_line_color = None
     plot.scatter(x="lat_b", y="lon_b",source=source_map,size="size",color='red', marker='o') 
-    plot.scatter(x="lat_p", y="lon_p",source=source_map,size="size",color='blue', marker='square') 
-
-    hover = plot.select(dict(type=HoverTool))
-    hover.tooltips = [('Plant Name','@name'),('Reactor and Containment','@type')]
+    plot.select(dict(type=HoverTool)).tooltips = [('Plant Name','@name_b'),('Reactor and Containment','@type_b')]
+    # plot.scatter(x="lat_p", y="lon_p",source=source_map,size="size",color='blue', marker='square') 
+    # plot.select(dict(type=HoverTool)).tooltips = [('Plant Name','@name_p'),('Reactor and Containment','@type_p')]
 
     return plot
 
 df_perform = pd.read_csv('npp_performance.csv', index_col='Date')
+df_perform['average_perform'] = df_perform.mean(axis=1)
 locations = list(df_perform.columns.values)
 location = 'Arkansas Nuclear 1'
 
@@ -70,11 +70,12 @@ source_perfomance = ColumnDataSource(data=dict())
 def performance():
     plot = Figure(x_axis_type="datetime",tools="pan,hover", toolbar_location=None,title = 'Power Plant Performance',
                   plot_width=1000,plot_height=300)
-    plot.line(x="time",y="power_out",source=source_perfomance,line_color="green")
+    plot.line(x="time",y="power_out",source=source_perfomance,line_color="green",name='local')
+    plot.line(x="time",y="avg_perf",source=source_perfomance,line_color="red",name='global')
     plot.x_range = DataRange1d(range_padding=0.0, bounds=None)
     
-    hover = plot.select(dict(type=HoverTool))
-    hover.tooltips = [('Date','@hover_time'),('Performance','@power_out')]
+    hover = HoverTool(names=['local','global'])
+    plot.select(dict(type=HoverTool)).tooltips = [('Date','@hover_time'),('Performance','@power_out')]
 
     return plot
 
@@ -97,20 +98,23 @@ def update_map():
     #split data based on reactor type
     data_bwr = df[df['Reactor and Containment Type'].str.contains('BWR')]
     data_pwr = df[df['Reactor and Containment Type'].str.contains('PWR')]
-
+    
     source_map.data = dict(
         lat_b=data_bwr['merc_lat'],
         lon_b=data_bwr['merc_lon'],
         lat_p=data_pwr['merc_lat'],
         lon_p=data_pwr['merc_lon'],
         size=df['normalized_size'],
-        name=df['Plant Name Unit Number'],
-        type=df['Reactor and Containment Type']
+        name_b=data_bwr['Plant Name Unit Number'],
+        type_b=data_bwr['Reactor and Containment Type'],
+        name_p=data_pwr['Plant Name Unit Number'],
+        type_p=data_pwr['Reactor and Containment Type']
     )
 
 def update_performance():
     npp_loc = df_perform[location]
-    source_perfomance.data = dict(time=df_perform.index.to_datetime(),power_out=npp_loc,hover_time=df_perform.index)
+    source_perfomance.data = dict(time=df_perform.index.to_datetime(),power_out=npp_loc,hover_time=df_perform.index,
+        avg_perf=df_perform['average_perform'])
 
 def update_data():
     update_map()
