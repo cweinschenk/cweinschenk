@@ -12,7 +12,7 @@ from bokeh.plotting import show,Figure,figure
 from bokeh.models.glyphs import Line
 from bokeh.models import Range1d, ColumnDataSource, LinearAxis, PanTool, WheelZoomTool,HoverTool,VBox,HBox,Select,DataRange1d
 
-TOOLS="pan,wheel_zoom,reset,save,hover"
+TOOLS="pan,wheel_zoom,save,hover"
 
 document = Document()
 session = push_session(document)
@@ -30,6 +30,7 @@ def geographic_to_web_mercator(x_lon, y_lat):
 
 
 size = 'Days Active'
+shapes =["circle","square"]
 #read in data
 df_geo = pd.read_csv('NPP_Locations.csv')
 df_npp = pd.read_csv('NUREG_1350_Volume_27_Appendix_A.csv')
@@ -53,10 +54,8 @@ def map():
     plot.axis.visible = False
     plot.xgrid.grid_line_color = None
     plot.ygrid.grid_line_color = None
-    plot.scatter(x="lat_b", y="lon_b",source=source_map,size="size",color='red', marker='o') 
-    plot.select(dict(type=HoverTool)).tooltips = [('Plant Name','@name_b'),('Reactor and Containment','@type_b')]
-    # plot.scatter(x="lat_p", y="lon_p",source=source_map,size="size",color='blue', marker='square') 
-    # plot.select(dict(type=HoverTool)).tooltips = [('Plant Name','@name_p'),('Reactor and Containment','@type_p')]
+    plot.scatter(x="lat", y="lon",source=source_map,size="size",marker="shape",fill_alpha=0, line_width=2, color='red')
+    plot.select(dict(type=HoverTool)).tooltips = [('Plant Name','@name'),('Reactor and Containment','@type')]
 
     return plot
 
@@ -85,30 +84,28 @@ def update_map():
         timediff = datetime.datetime.now() - df['Commercial Operation']
         days = timediff.dt.days
         df['Commercial Operation' + ' Days'] = days
-        df['normalized_size'] = 15*(df['Commercial Operation Days']/df['Commercial Operation Days'].max())
+        df['normalized_size'] = 20*(df['Commercial Operation Days']/df['Commercial Operation Days'].max())
     elif size == 'Days Remaining':
         df['Operating License Expires'] = pd.to_datetime(df['Operating License Expires'])
         timediff = datetime.datetime.now() - df['Operating License Expires']
         days = abs(timediff.dt.days)
         df['Operating License Expires' + ' Days'] = days
-        df['normalized_size'] = 15*(df['Operating License Expires Days']/df['Operating License Expires Days'].max())    
+        df['normalized_size'] = 20*(df['Operating License Expires Days']/df['Operating License Expires Days'].max())    
     elif size == 'Power Output':
-        df['normalized_size'] = 15*(df['Licensed MWt']/df['Licensed MWt'].max())
+        df['normalized_size'] = 20*(df['Licensed MWt']/df['Licensed MWt'].max())
 
-    #split data based on reactor type
-    data_bwr = df[df['Reactor and Containment Type'].str.contains('BWR')]
-    data_pwr = df[df['Reactor and Containment Type'].str.contains('PWR')]
-    
+    df['shape'] = "circle"
+    for i in range(len(df)):
+        if 'BWR' in df['Reactor and Containment Type'][i]:
+            df['shape'][i] = "square"
+
     source_map.data = dict(
-        lat_b=data_bwr['merc_lat'],
-        lon_b=data_bwr['merc_lon'],
-        lat_p=data_pwr['merc_lat'],
-        lon_p=data_pwr['merc_lon'],
+        lat=df['merc_lat'],
+        lon=df['merc_lon'],
         size=df['normalized_size'],
-        name_b=data_bwr['Plant Name Unit Number'],
-        type_b=data_bwr['Reactor and Containment Type'],
-        name_p=data_pwr['Plant Name Unit Number'],
-        type_p=data_pwr['Reactor and Containment Type']
+        name=df['Plant Name Unit Number'],
+        type=df['Reactor and Containment Type'],
+        shape=df['shape'],
     )
 
 def update_performance():
