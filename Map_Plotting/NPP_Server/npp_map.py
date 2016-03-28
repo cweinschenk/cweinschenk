@@ -54,7 +54,7 @@ def map():
     plot.axis.visible = False
     plot.xgrid.grid_line_color = None
     plot.ygrid.grid_line_color = None
-    plot.scatter(x="lat", y="lon",source=source_map,size="size",marker="shape",fill_alpha=0, line_width=2, color='red')
+    plot.scatter(x="lat", y="lon",source=source_map,size="size",fill_alpha=0, line_width=2, color='red')
     plot.select(dict(type=HoverTool)).tooltips = [('Plant Name','@name'),('Reactor and Containment','@type')]
 
     return plot
