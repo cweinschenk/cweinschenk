@@ -42,7 +42,8 @@ for i in range(len(df)):
 df['merc_lat'] = x2
 df['merc_lon'] = y2
 
-source_map = ColumnDataSource(data=dict())
+source_map_bwr = ColumnDataSource(data=dict())
+source_map_pwr = ColumnDataSource(data=dict())
 
 def map():
     x_range=(-10000000,-11000000)
@@ -54,7 +55,8 @@ def map():
     plot.axis.visible = False
     plot.xgrid.grid_line_color = None
     plot.ygrid.grid_line_color = None
-    plot.scatter(x="lat", y="lon",source=source_map,size="size",fill_alpha=0, line_width=2, color='red')
+    m1=plot.circle(x="lat", y="lon",source=source_map_bwr,size="size",fill_alpha=0, line_width=2,color='red')
+    m2=plot.square(x="lat", y="lon",source=source_map_pwr,size="size",fill_alpha=0, line_width=2,color='red')
     plot.select(dict(type=HoverTool)).tooltips = [('Plant Name','@name'),('Reactor and Containment','@type')]
 
     return plot
@@ -94,19 +96,25 @@ def update_map():
     elif size == 'Power Output':
         df['normalized_size'] = 20*(df['Licensed MWt']/df['Licensed MWt'].max())
 
-    df['shape'] = "circle"
-    for i in range(len(df)):
-        if 'BWR' in df['Reactor and Containment Type'][i]:
-            df['shape'][i] = "square"
+    df_bwr = df[df['Reactor and Containment Type'].str.contains("BWR")]
+    df_pwr = df[df['Reactor and Containment Type'].str.contains("PWR")]
 
-    source_map.data = dict(
-        lat=df['merc_lat'],
-        lon=df['merc_lon'],
-        size=df['normalized_size'],
-        name=df['Plant Name Unit Number'],
-        type=df['Reactor and Containment Type'],
-        shape=df['shape'],
+    source_map_bwr.data = dict(
+        lat=df_bwr['merc_lat'],
+        lon=df_bwr['merc_lon'],
+        size=df_bwr['normalized_size'],
+        name=df_bwr['Plant Name Unit Number'],
+        type=df_bwr['Reactor and Containment Type'],
     )
+
+    source_map_pwr.data = dict(
+        lat=df_pwr['merc_lat'],
+        lon=df_pwr['merc_lon'],
+        size=df_pwr['normalized_size'],
+        name=df_pwr['Plant Name Unit Number'],
+        type=df_pwr['Reactor and Containment Type'],
+    )
+
 
 def update_performance():
     npp_loc = df_perform[location]
