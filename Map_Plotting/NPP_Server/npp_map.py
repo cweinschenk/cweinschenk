@@ -13,7 +13,7 @@ from bokeh.models.glyphs import Line
 from bokeh.models import Range1d, ColumnDataSource, LinearAxis, PanTool, WheelZoomTool,HoverTool,VBox,HBox,Select,DataRange1d
 
 TOOLS="pan,wheel_zoom,save,hover"
-
+TOOLS2 = "save"
 document = Document()
 session = push_session(document)
 
@@ -69,15 +69,13 @@ location = 'Arkansas Nuclear 1'
 source_perfomance = ColumnDataSource(data=dict())
 
 def performance():
-    plot = Figure(x_axis_type="datetime",tools="pan,hover", toolbar_location=None,title = 'Power Plant Performance',
-                  plot_width=1000,plot_height=300)
-    plot.line(x="time",y="power_out",source=source_perfomance,line_color="green",name='local')
-    plot.line(x="time",y="avg_perf",source=source_perfomance,line_color="red",name='global')
-    plot.x_range = DataRange1d(range_padding=0.0, bounds=None)
-    
-    hover = HoverTool(names=['local','global'])
+    plot = Figure(x_axis_type="datetime",tools="save", toolbar_location=None,plot_width=1000,plot_height=300)
+    l1=plot.line(x="time",y="power_out",source=source_perfomance,line_color="green",name='local')
+    plot.add_tools(HoverTool(renderers=[l1]))
     plot.select(dict(type=HoverTool)).tooltips = [('Date','@hover_time'),('Performance','@power_out')]
-
+    l2=plot.line(x="time",y="avg_perf",source=source_perfomance,line_color="red",name='global')
+    plot.x_range = DataRange1d(range_padding=0.0, bounds=None)
+    plot.title = "Plant Performance"
     return plot
 
 def update_map():
@@ -136,12 +134,12 @@ def on_location_change(attr, old, new):
     update_data()
 
 def create_layout():
-    size_select = Select(value='Days Active', title='NPP Scaling', options=['Days Active', 'Days Remaining', 'Power Output'])
+    size_select = Select(value='Days Active', title='Marker Scaling:', options=['Days Active', 'Days Remaining', 'Power Output'])
     size_select.on_change('value',on_size_change)
     
-    location_select = Select(title="Power Plant", value="Arkansas Nuclear 1", options=locations)
+    location_select = Select(title="Power Plant Name:", value=location, options=locations)
     location_select.on_change('value', on_location_change)
-
+    
     controls = HBox(children=[size_select,location_select])
     layout = VBox(children=[controls, map(),performance()])
 
