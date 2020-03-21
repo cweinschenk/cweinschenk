@@ -11,7 +11,7 @@ from pylab import *
 from opencage.geocoder import OpenCageGeocode
 from pprint import pprint
 
-key = '8f38f0684c7043b291b5c61bdf055349'
+key = 'add your own Open Cage Code key here'
 geocoder = OpenCageGeocode(key)
 
 
