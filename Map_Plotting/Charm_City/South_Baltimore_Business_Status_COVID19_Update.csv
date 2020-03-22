@@ -1,42 +1,41 @@
 ,Business_Name,Address,Phone Number,Website,Status,Online Ordering,Pick-Up,Walk-Up,Delivery,Doordash,Grubhub,Postmates,Ubereats,E-Gift Cards,Gift Cards,"Notes (i.e. modified hours, special offerings, etc. )",Last Updated,Latitude,Longitude
 0,101,1118 S Charles St,(443) 682-9480,https://www.101baltimore.com/,CLOSED,,,,,,,,,https://rallyforrestaurants.com/,,,3/18/20,39.2761027,-76.6144276
 1,&pizza,1201 S Charles St,(202) 558-7549,https://andpizza.com/,OPEN,https://order.andpizza.com/#/shops,X,X,X,,,,,https://rallyforrestaurants.com/,,,3/18/20,39.2757066,-76.6141337
-2,1157 Bar + Kitchen,1157 Haubert St,(443) 449-5525,www.1157barandkitchen.com,CLOSED,,,,,,,,,,,,3/18/20,39.2730138,-76.5919761
+2,1157 Bar + Kitchen,1157 Haubert St,(443) 449-5525,http://www.1157barandkitchen.com,CLOSED,,,,,,,,,,,,3/18/20,39.2730138,-76.5919761
 3,3 Bean,209 Key Hwy,(410) 216-3339,https://www.vagrantcoffee.com/,OPEN,,X,X,,,,,,https://squareup.com/gift/YZ32XX9WMFG33/order,YES,,3/18/20,39.2805635,-76.6109914
 4,Abbey Burger Bistro,1041 Marshall St,(443) 453-9698,https://abbeyburger.com/,OPEN,,X,,,,,,,https://rallyforrestaurants.com/,,,3/18/20,39.2772094,-76.6129099
 5,Afters,1001 S Charles St,(410) 244-0909,https://fedhill.org/business/afters-cafe/,OPEN,,X,X,,,X,,X,,,,3/18/20,39.278051,-76.614268
 6,AJ's on Hanover,1500 S Hanover St,(410) 800-2657,http://ajsonhanover.com/,OPEN,Order by phone,X,,,,,,,,,,,39.2724567,-76.6154704
 7,Amber,900 E Fort Ave,(443) 835-4060,https://ambercafe.com,OPEN,amber.mobilebytes.com,X,,,,,,,,,,3/18/20,39.271781,-76.6006826
 8,Annoulas Greek Kitchen,Cross Street Market,(443) 835-4494,https://www.annoulaskitchen.com/,OPEN,https://www.annoulaskitchen.com/,X,X,X,X,,,,,X,,3/18/20,39.2768086,-76.6133302
-9,Arabian Nights Hookah lounge,745 E Fort Ave,(443) 438-7417,www.arabiannightslounge.net,CLOSED,,,,,X,,,,,,,,39.2719373,-76.6028982
+9,Arabian Nights Hookah lounge,745 E Fort Ave,(443) 438-7417,http://www.arabiannightslounge.net,CLOSED,,,,,X,,,,,,,,39.2719373,-76.6028982
 10,Banditos,1118 S Charles St,(443) 835-1517,https://www.banditosbk.com/,CLOSED,,,,,,,,,https://www.toasttab.com/banditos-bar-kitchen/giftcards,,,3/18/20,39.2761027,-76.6144276
-11,Barflys,620 E Fort Ave,(443) 682-7227,www.barflysbaltimore.com,OPEN,,X,,,,,,,,,,3/18/20,39.2730161,-76.6046491
+11,Barflys,620 E Fort Ave,(443) 682-7227,http://www.barflysbaltimore.com/,OPEN,,X,,,,,,,,,,3/18/20,39.2730161,-76.6046491
 12,Barracudas,1230 E Fort Ave,(410) 685-2832,https://barracudalpt.com/,OPEN,,X,,,,,,,https://rallyforrestaurants.com/,,,3/18/20,39.2702496,-76.5967353
 13,Berries by Quicha,920 Light St,(410) 440-3239,https://berriesbyquicha.com/,OPEN,,X,X,X,,,,,,,,3/18/20,39.2783913,-76.6128607
 14,Blooming Deli,1448 Light St,(410) 800-2455,https://www.bloomingdeli.com/,,,,,,,X,,X,,,,3/18/20,39.2729538,-76.611922
-15,Blue Agave,1032 Light St,(410) 576-3938,www.blueagaverestaurant.com,OPEN,,X,X,X,X,X,,,,,,3/18/20,39.2774064,-76.6126949
+15,Blue Agave,1032 Light St,(410) 576-3938,http://www.blueagaverestaurant.com/,OPEN,,X,X,X,X,X,,,,,,3/18/20,39.2774064,-76.6126949
 16,Blue Moon Too,1024 Light St,(443) 759-4907,https://bluemoonbaltimore.com/?fbclid=IwAR1y6AX8Rj56sgb5D67r1bI0GgyMLyERVryZ0O6RznF1ILq6o1BqMB6Bz4o,CLOSED,,,,,,,,,,,,3/18/20,39.2775911,-76.6127393
 17,Boaz Bistro,1002 Light St,(443) 352-3417,https://www.facebook.com/BistroBoaz/,OPEN,Order by phone,X,X,X,,,,,,,,,39.2781153,-76.6128198
 18,Bodhi Corner,1444 Light St,(443) 708-7527,https://bodhifedhill.com/,OPEN,,X,X,X,,X,,,https://rallyforrestaurants.com/,https://www.toasttab.com/bodhi-fedhill/giftcards,,3/18/20,39.2729925,-76.6119993
-19,Bookmakers,31 E Cross St,(443) 438-4039,www.bookmakersbaltimore.com,,,,,,,,,,https://rallyforrestaurants.com/,,,3/18/20,39.276544,-76.6131893
+19,Bookmakers,31 E Cross St,(443) 438-4039,http://bookmakersbaltimore.com/,,,,,,,,,,https://rallyforrestaurants.com/,,,3/18/20,39.276544,-76.6131893
 20,BRD,1104 S Charles St,(664) 210-2222,https://www.eatbrd.com/,OPEN,,,X,,,,,,,,,3/18/20,39.276723,-76.614487
 21,Brendali Italian Ristorante,1022 Light Street,(410) 800-2485,http://brendaliitalianristorante.godaddysites.com/?fbclid=IwAR26Z65beQp5GV_4CGYYb8S_BY-Z6ubr364TQFbhob21nNbvPZZ5XK63qHM,OPEN,,X,X,X,,,,,,,,3/18/20,39.2777106,-76.6127275
-22,Brewers Cask,1236 Light St,(410) 273-9377,www.brewerscask.com,OPEN,,,,,,X,,X,,,,3/19/20,39.2751029,-76.6123065
-23,Brother Sushi,1035 S Charles St,(410) 891-2886,https://brotherssushi.com/,,,,,,,X,,,,,,3/18/20,39.2774116,-76.6141623
+22,Brewers Cask,1236 Light St,(410) 273-9377,http://www.brewerscask.com/,OPEN,,,,,,X,,X,,,,3/19/20,39.2751029,-76.6123065
+23,Brothers Sushi,1035 S Charles St,(410) 891-2886,https://brotherssushi.com/,,,,,,,X,,,,,,3/18/20,39.2774116,-76.6141623
 24,Byblos,1033 Light St,(410) 209-2495,https://bybloslebanesecuisine.com/,OPEN,,X,X,,,,,,,,,3/18/20,39.2775586,-76.6122019
 25,Cans Filling Station,1065 S Charles St,(484) 998-8227,https://www.crossstmarket.com/vendors/cans-fill-station/,OPEN,https://thecansclub.square.site/,X,,,,,,,X,X,,3/18/20,39.2768086,-76.6133302
-26,Captain Larrys,601 E Fort Ave,(410) 727-4799,www.captainlarrys.com/cms,OPEN,,,,,,,,,,https://squareup.com/gift/MC1DN9MAK8X3A/order?fbclid=IwAR2W8rUCIOqKNR51tpCvliT_KDFfm-ykjsaCcZR-pwsVhadPPOrzNgL1Fm0,,3/18/20,39.2727331,-76.6049674
+26,Captain Larrys,601 E Fort Ave,(410) 727-4799,http://www.captainlarrys.com/cms/,OPEN,,,,,,,,,,https://squareup.com/gift/MC1DN9MAK8X3A/order?fbclid=IwAR2W8rUCIOqKNR51tpCvliT_KDFfm-ykjsaCcZR-pwsVhadPPOrzNgL1Fm0,,3/18/20,39.2727331,-76.6049674
 27,Ceremony Coffee Roasters,Cross Street Market,(443) 708-5284,https://ceremonycoffee.com/location/cross-street-market/?fbclid=IwAR2GGVLHHWofWJUc15A4Vr4iqj0W6lpumGmaKUe4Y37iulg972B92_GJeFw,OPEN,https://apps.apple.com/us/app/ceremony-coffee/id1443970019,X,X,,,,,,X,X,,3/18/20,39.2768086,-76.6133302
 28,ChaTime,1114 Light Street,(410) 500-8695,https://www.chatimemd.com/,OPEN,,,X,,X,,,X,,,,3/18/20,39.2763973,-76.6125787
 29,Checkerspot Brewing Company,1399 Sharp St,(443) 388-8912,https://www.checkerspotbrewing.com/,OPEN,www.checkerspotbrewing.com/shop,X,,X,,,,,,,,3/18/20,39.275286,-76.620089
-30,Cheese Galore & More,1125 S Charles St,(410) 244-5515,www.cheesegaloreandmore.com,OPEN,,X,X,,,,,,,,,3/18/20,39.2760798,-76.6140636
+30,Cheese Galore & More,1125 S Charles St,(410) 244-5515,http://www.cheesegaloreandmore.com/,OPEN,,X,X,,,,,,,,,3/18/20,39.2760798,-76.6140636
 31,City Limits,1700 E Fort Ave,(410) 244-8084,http://citylimitssportsbar.com/,OPEN,,X,X,,,,,,,,,3/18/20,39.2681999,-76.590831
 32,Clean Juice,1706 Whetstone Way,(443) 438-4669,https://cleanjuice.com/locations/locust-point/,OPEN,,X,X,X,,,,,https://rallyforrestaurants.com/,,,3/18/20,39.2688194,-76.6000299
 33,Crossbar,18 E Cross St,(443) 438-4013,https://www.crossbarbaltimore.com,CLOSED,,,,,,,,,,,,3/18/20,39.2771031,-76.6136933
 34,Damascus Shawarma ,1038 Light St. ,(443) 449-5722,https://newshamllc.com,OPEN,https://order.partake7.com/damascusshawarma,x,x,,,,,,,,,,39.2772746,-76.6126344
-35,Damascus Shawarma ,1038 Light St,(443) 531-7816,https://newshamllc.com/,,https://order.partake7.com/damascusshawarma,,,,,,,,,,,3/18/20,39.2772746,-76.6126344
 36,Delia Foleys,1439 S Charles St,(443) 682-9141,http://deliafoleys.pub,OPEN,,X,,,,,,,,,,3/18/20,39.2727569,-76.6138175
-37,Dessert Fantasies,1433 E Fort Ave,(443) 708-1349,www.dessertfantasies.net,OPEN,,X,X,X,,,,,,,,3/18/20,39.2689586,-76.5942155
+37,Dessert Fantasies,1433 E Fort Ave,(443) 708-1349,http://www.dessertfantasies.net,OPEN,,X,X,X,,,,,,,,3/18/20,39.2689586,-76.5942155
 38,Diablo Doughnuts,1035 Light St,(410) 892-3251,https://diablo-doughnuts.wixsite.com/410dough/,CLOSED,,,,,,,,,,https://squareup.com/gift/AZ74T3FKT1S5Y/order?fbclid=IwAR1SorrRGaGT0vIux6IDOfwYbY9ELP3dxagL1ICuU_qDRN0Rqc199BZh0Cg,,3/18/20,39.2775306,-76.6120872
 39,Diamondback Brewing Company,1215 E Fort Ave,(443) 388-9626,https://www.diamondbackbeer.com/,OPEN,https://www.toasttab.com/diamondback-beer/v2/online-order#!/,X,,X,X,,,,https://rallyforrestaurants.com/,https://www.diamondbackbeer.com/store/dbc-gift-cards,,3/18/20,39.2687506,-76.5974015
 40,DiPasquales,500 Harborview Drive,(443) 963-1872,https://www.dipasquales.com/,OPEN,,X,X,X,,,,,,,,3/18/20,39.281539,-76.607701
@@ -58,7 +57,7 @@
 56,HomeSlyce,1741 Light Street,(443) 501-4000,http://www.homeslyce.com/order-online,OPEN,,,,X,,,,,https://rallyforrestaurants.com/,,,3/18/20,39.2696849,-76.611489
 57,Hull Street Blues Cafe,1222 Hull St,(410) 727-7476,http://places.singleplatform.com/hull-st-blues/menu?ref=google#menu_3731175,OPEN,,X,X,,,X,,X,,,,3/18/20,39.2722843,-76.5921086
 58,Illusions Magic Bar & Theater,1025 S Charles Street,(401)932-2489,https://www.illusionsmagicbar.com/,CLOSED,,,,,,,,,,X,,3/18/20,39.2775916,-76.6140859
-59,In Like Flynn,1371 Andre St,(667) 303-3681,www.inlikeflynn.net,OPEN,,X,,,X,,,,,,,3/18/20,39.2694423,-76.5900114
+59,In Like Flynn,1371 Andre St,(667) 303-3681,https://www.facebook.com/Inlikeflynntavernbaltimore/,OPEN,,X,,,X,,,,,,,3/18/20,39.2694423,-76.5900114
 60,Insomnia Cookies,1059 S Charles St,(410) 469-8752,https://insomniacookies.com/locations/store/1132,OPEN,https://insomniacookies.com/order,,,X,,,,,,,,3/18/20,39.2769772,-76.6141497
 61,Iron Rooster,1606 Whetstone Way,(443) 708-7935,https://www.ironroosterallday.com/,OPEN,,X,,,,,,,,,,3/18/20,39.269483,-76.599742
 62,Jacks Market & Carryout,1801 Light St,(410) 685-5076,https://www.facebook.com/pages/category/American-Restaurant/Jacks-Carry-Out-1585486555045767/,OPEN,,,,,,,,,,,,3/18/20,39.2694176,-76.6115782
@@ -70,23 +69,23 @@
 68,La Reyna,1101 Light St,(443) 759-4193,http://orderelpolloreal.com/,,https://themenustar1.com/webspace/menus.php?code=orderelpolloreal.com,,,,,,,,,,,3/18/20,39.2769682,-76.612127
 69,Ledos,913 E Fort Ave,(410) 528-8494,https://order.ledopizza.com/menu/ledo-pizza-federal-hill,OPEN,https://order.ledopizza.com/menu/ledo-pizza-federal-hill,X,X,,,,,,,,,3/18/20,39.2707721,-76.6017662
 70,Light Street Cafe,1121 Light St,(443) 682-8246,http://lightstreetcafe.com/,OPEN,Call to place order,X,,,,,,,,,,3/18/20,39.2765227,-76.6120295
-71,Limoncello,900 E Fort Ave,(443) 708-1540,www.limoncellobaltimore.com,CLOSED,,,,,,,,,,,,3/18/20,39.271781,-76.6006826
+71,Limoncello,900 E Fort Ave,(443) 708-1540,http://www.limoncellobaltimore.com,CLOSED,,,,,,,,,,,,3/18/20,39.271781,-76.6006826
 72,Little Havana,1325 Key Highway,(410) 837-9903,https://www.littlehavanas.com/,OPEN,,X,X,,,,,,,,Liquor/beer/wine only,3/18/20,39.2747839,-76.6029707
 73,LP Steamers,1100 E Fort Ave,(410) 576-9294,https://www.locustpointsteamers.com/,OPEN,,X,X,X,,,X,,,X,Hours are 11-9 ...have takeout beer and wine too,3/18/20,39.2709517,-76.5986134
 74,Lucky Fortune,1116 Light St,(410) 231-7512,https://www.luckyfortunebaltimore.com/?fbclid=IwAR0r1HOCoszHmCjQ4kzPA_y6-WpSrq-uXwIiOy8PdfvJuRMimGfXOyjVoDg,OPEN,https://www.beyondmenu.com/21716/baltimore/lucky-fortune-baltimore-21230.aspx?utm_source=satellite&utm_medium=menu_btn_order&pk_vid=800d4877eedb646b158453836771ee6a,X,X,,,,,,,,,3/18/20,39.2763796,-76.612461
 75,Machados,201 E. Heath St. ,(410) 347-1286,https://machados-mini-mart.business.site/,OPEN,,,,,,,,,,,,3/18/20,39.2704878,-76.6105477
-76,MaGerks,1061 S Charles St,(410) 576-9230,www.magerks.com,CLOSED,,,,,,,,,,,,3/18/20,39.2769342,-76.6141476
+76,MaGerks,1061 S Charles St,(410) 576-9230,http://www.magerkspub.com/,CLOSED,,,,,,,,,,,,3/18/20,39.2769342,-76.6141476
 77,Maria Ds,1016 Light St,(410) 727-5430,https://www.maria-ds.com/,OPEN,https://mariads.foodtecsolutions.com/ordering/intro,X,X,X,,,,,,,,3/18/20,39.2778331,-76.6127262
-78,Matsuri,1105 S Charles St,(410) 752-8561,www.matsuri.us,OPEN,,X,X,X,,X,,X,,,,3/18/20,39.2765067,-76.6141387
+78,Matsuri,1105 S Charles St,(410) 752-8561,https://matsuri.us/,OPEN,,X,X,X,,X,,X,,,,3/18/20,39.2765067,-76.6141387
 79,McDonalds,825 E. Fort Ave. ,(410) 385-5364,https://www.mcdonalds.com/us/en-us/location/md/baltimore/825-east-fort-avenue/11851.html?cid=RF:YXT:GMB::Clicks,OPEN,,,,,,,,,,,,3/18/20,39.2716203,-76.6021251
-80,Mi & Yu,1016 S Charles St,(443) 388-9295,www.miandyunoodlebar.com,OPEN,,X,X,,X,,X,X,,,,3/18/20,39.2774428,-76.6146567
-81,Midnite Confections,1051 S Charles St,(410) 727-1010,www.midniteconfection.com,OPEN,,X,X,X,,X,X,,,X,,3/18/20,39.2771292,-76.6141616
-82,Mikies,210 E Fort Ave,(410) 332-1966,www.mikiespizzasubs.com,OPEN,http://mikiespizzasubs.com/order.html,X,X,X,,,,,,,,3/18/20,39.272884,-76.6096869
+80,Mi & Yu,1016 S Charles St,(443) 388-9295,http://miandyunoodlebar.com/,OPEN,,X,X,,X,,X,X,,,,3/18/20,39.2774428,-76.6146567
+81,Midnite Confections,1051 S Charles St,(410) 727-1010,http://www.midniteconfection.com,OPEN,,X,X,X,,X,X,,,X,,3/18/20,39.2771292,-76.6141616
+82,Mikies,210 E Fort Ave,(410) 332-1966,http://www.mikiespizzasubs.com,OPEN,http://mikiespizzasubs.com/order.html,X,X,X,,,,,,,,3/18/20,39.272884,-76.6096869
 83,Mothers,1113 S Charles St,(410) 244-8686,https://www.mothersgrille.com/,CLOSED,,,,,,X,,,,,,3/18/20,39.2763693,-76.6141158
 84,Muirs,36 E Fort Ave,(410) 385-0344,https://www.facebook.com/pages/category/Pub/Muirs-Tavern-287318201430213/,,,,,,,,,,,,,3/18/20,39.2728707,-76.6124345
 85,Nicks Fish House,2600 Insulator Dr. ,(410) 347-4123,https://nicksfishhouse.com/,CLOSED,,,,,,,,,,,,3/18/20,39.2606119,-76.6135738
 86,Nobles,1024 S Charles St,(410) 727-1355,https://www.noblesbarandgrill.com/,,,,,,,,,,,,,3/18/20,39.2772781,-76.6146811
-87,One-Star Country Club,38 E Cross St,(410) 727-5102,www.onestarcountryclub.com,,,,,,,,,,,,,3/18/20,39.2771506,-76.6130876
+87,One-Star Country Club,38 E Cross St,(410) 727-5102,http://www.onestarcountryclub.com,,,,,,,,,,,,,3/18/20,39.2771506,-76.6130876
 88,Ono Poke,Cross Street Market,(667) 309-3584,https://www.onopokemd.com/,CLOSED,,,,,,,,,,,,3/18/20,39.2768086,-76.6133302
 89,Order & Chaos,1410 Key Highway,(410) 244-1111,https://www.orderchaoscoffee.com/,CLOSED,,,,,,,,,,,,3/18/20,39.2735561,-76.6028515
 90,Papa Johns,1200 S Hanover St,(410) 783-7272,https://locations.papajohns.com/united-states/md/21230-3720/baltimore/1200-south-hanover-street,OPEN,https://www.papajohns.com/order/stores-near-me?searchType=DELIVERY,,,X,,,,,,,,3/18/20,39.275142,-76.615545
@@ -123,7 +122,7 @@ https://serenitywinecafe.com",OPEN,,X,,,,,,,,,,3/18/20,39.2731122,-76.5910909
 120,Social Pub,25 E. Cross St. ,,,CLOSED,,,,,,,,,https://rallyforrestaurants.com/,,,3/18/20,39.2765253,-76.6133565
 121,Southside Burger Bar,1065 S Charles St,(443) 388-8321,https://www.southsideburgerbar.com,CLOSED ,https://www.grubhub.com/restaurant/southside-burger-bar-1065-s-charles-st-baltimore/1447188,,,,,,,,,,,3/18/20,39.2768086,-76.6133302
 122,Southside Diner,893 E Fort Ave,(410) 727-7067,https://www.eatatsouthside.com/,CLOSED,https://www.eatatsouthside.com/orderonline,,,,X,X,,,,,,3/18/20,39.2716685,-76.6016277
-123,Southside Saloon,430 E. Fort Ave. ,(410) 547-9995,https://www.facebook.com/Stu1104/,OPEN,,,X,,,,,,,,,3/18/20,39.2729763,-76.6074137
+123,Southside Saloon,430 E. Fort Ave. ,(410) 547-9995,https://www.facebook.com/Southside-Saloon-113334885368009/,OPEN,,,X,,,,,,,,,3/18/20,39.2729763,-76.6074137
 124,Spoons Cafe,24 E. Cross St. ,(410) 996-4712,https://www.spoonsbaltimore.com,OPEN,https://www.spoonsbaltimore.com/order-online/,X,,,,,,X,https://rallyforrestaurants.com/,,10% off all pickup orders ,3/19/20,39.2770171,-76.6134377
 125,Stalking Horse,26 E. Cross St. ,(410) 244-6722,https://stalkinghorsebar.com,CLOSED,,,,,,,,,,,,3/18/20,39.2770956,-76.613387
 126,Starbucks,919 E. Fort Ave,(410) 244-1934,https://www.starbucks.com/store-locator/store/70102/southside-marketplace-919-e-fort-ave-baltimore-md-212304764-us,OPEN,,,,,,,,,,,,3/18/20,39.2714049,-76.6011907
@@ -144,7 +143,7 @@ https://serenitywinecafe.com",OPEN,,X,,,,,,,,,,3/18/20,39.2731122,-76.5910909
 141,Urban Deli,1025 Light St,(443) 708-0495,https://www.urbandelibmore.com/,OPEN,,X,,X,,,,,,,,3/18/20,39.2777261,-76.6122379
 142,Utsuke Ramen,414 Light St #103,(443) 563-2977,https://www.ramenutsuke.com/,OPEN,,X,,X,,X,,,,,,3/18/20,39.283756,-76.6139857
 143,Wayward,1117 S Charles St,(410) 223-2269,http://www.waywardsmoke.com/,CLOSED,,,,,,,,,https://www.toasttab.com/wayward-smoke-house/giftcards,,,3/18/20,39.2762599,-76.6139996
-144,Wiley Gunters,823 E Fort Ave,(410) 637-3699,www.wileygunters.com,OPEN,,X,,X,,X,,,X,,,3/18/20,39.271774,-76.6022229
+144,Wiley Gunters,823 E Fort Ave,(410) 637-3699,http://www.wileygunters.com,OPEN,,X,,X,,X,,,X,,,3/18/20,39.271774,-76.6022229
 145,World of Beer,1724 Whetstone Way,(410) 752-2337,https://worldofbeer.com/,OPEN,,,,,,,,,X,X,,3/18/20,39.268775,-76.6000954
 146,Zaatar,1019 S Charles St,(443) 873-7463,https://www.zaatarbaltimore.com/,OPEN,"zaatarmediterranean.com,",X,,X,,X,X,,X,,,3/18/20,39.2777521,-76.6141962
-147,Zeeba Lounge,916 Light St,(410) 539-7900,www.zeebalounge.com,CLOSED,,,,,,,,,,,,3/18/20,39.2784871,-76.6128655
+147,Zeeba Lounge,916 Light St,(410) 539-7900,http://www.zeebalounge.com,CLOSED,,,,,,,,,,,,3/18/20,39.2784871,-76.6128655
