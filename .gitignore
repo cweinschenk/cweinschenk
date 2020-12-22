@@ -5,3 +5,9 @@
 *.synctex.gz
 *.out
 *.DS_Store
+*.bbl
+*.bcf
+*.blg
+*.fls
+*.pdf
+*.run.xml
